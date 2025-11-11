@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EdgeSummon 2.0 - AI Summarization Assistant</title>
+    <meta
+      name="description"
+      content="AI-powered summarization assistant running on Cloudflare Workers"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-content">
+          <h1 class="title">
+            <span class="icon">⚡</span>
+            EdgeSummon 2.0
+          </h1>
+          <p class="subtitle">AI Summarization Assistant • Powered by Cloudflare Workers AI</p>
+        </div>
+      </header>
+
+      <!-- Chat Area -->
+      <main class="chat-container">
+        <div class="messages" id="messages">
+          <!-- Welcome message -->
+          <div class="message assistant-message">
+            <div class="message-avatar">🤖</div>
+            <div class="message-content">
+              <div class="message-text">
+                <p>
+                  👋 Welcome to <strong>EdgeSummon</strong>! I can help you summarize web
+                  content and answer questions about it.
+                </p>
+                <p><strong>Try:</strong></p>
+                <ul>
+                  <li>Paste a URL to get a summary</li>
+                  <li>Paste text content to summarize</li>
+                  <li>Ask follow-up questions about previous summaries</li>
+                </ul>
+              </div>
+              <div class="message-time">Just now</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-container">
+          <form id="chat-form" class="chat-form">
+            <textarea
+              id="message-input"
+              class="message-input"
+              placeholder="Paste a URL, text to summarize, or ask a question..."
+              rows="3"
+              required
+            ></textarea>
+            <button type="submit" id="send-button" class="send-button">
+              <span class="button-text">Send</span>
+              <span class="button-icon">→</span>
+            </button>
+          </form>
+          <div class="input-hint">
+            Press <kbd>Enter</kbd> to send • <kbd>Shift + Enter</kbd> for new line
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>
+          Built with
+          <a href="https://workers.cloudflare.com/" target="_blank" rel="noopener">Cloudflare Workers</a>
+          •
+          <a href="https://developers.cloudflare.com/workers-ai/" target="_blank" rel="noopener">Workers AI</a>
+          •
+          <a href="https://developers.cloudflare.com/durable-objects/" target="_blank" rel="noopener">Durable Objects</a>
+        </p>
+      </footer>
+    </div>
+
+    <!-- Loading overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+      <div class="loading-spinner"></div>
+      <p>Processing...</p>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
